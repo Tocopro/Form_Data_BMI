@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weight Check</title>
+    <link rel="stylesheet" href="p_style.css">
+</head>
+<body>
+<div class="section1">
+    <h1 class="heading1">
+        Weight Check BMI
+    </h1>
+    <div class="calculator">
+        <p>
+            Calculate your BMI
+        </p>
+        <form >
+            <div class="forms">
+                <label for="name"> Name </label>
+                <input type="text" name="name" id="name" placeholder="NAME">
+
+            </div>
+            <div>
+                <label> Weight</label>
+                <input placeholder="WEIGHT" type="number" name="weight" id="weight" min="1" max="1000" step="1">
+            </div>
+            <div>
+                <label> Height in Inches</label>
+                <input placeholder="HEIGHT" type="number" name="height" id="height" min="50" max="400" step="1">
+            </div>
+            <div>
+                <label> BMI </label>
+                <input type="number" id="answer">
+            </div>
+
+
+            <button type="reset"> RESET</button>
+            <button onclick="calc();"  type="button" name="CALC" id="CALC">CALCULATE</button>
+
+
+        </form>
+        <script>
+            function calc() {
+                const weight = parseInt(document.getElementById('weight').value);
+                const height = parseInt(document.getElementById('height').value);
+                document.getElementById('answer').value = ((weight) / (height ** 2) * 703).toFixed(2)
+            }
+        </script>
+    </div>
+    <div class="image">
+        <img src="weight_check.jpg" alt="Weight Photo">
+    </div>
+
+</div>
+</body>
+</html>
+
+Styling 
+
+
+.body {
+    margin: auto;
+}
+
+.section1 {
+
+}
+
+.heading1 {
+    font-weight: normal;
+    color: green;
+
+}
+
+.image {
+    background-image: url("weight_check.jpg");
+    background-repeat: no-repeat;
+
+}
+
+.calculator {
+    font-weight: normal;
+    font-size: 2em;
+    position: absolute;
+    right: 200px;
+    color: green;
+}
